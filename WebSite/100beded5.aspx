@@ -12,7 +12,9 @@
 </ul>
 <div class="h3"><center>100 Beded Sub District Hopital</center></div>
 
-
+<ul>
+<li>Shakti Kripa Mishra</li>
+</ul>
 
 <div>
 <table class="table table-responsive-sm">
