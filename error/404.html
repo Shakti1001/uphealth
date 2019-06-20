@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+       
+        .axis1 {
+                width: 1500px;
+                height: 100px;
+                background: #0066FF;
+                position: relative;
+                -webkit-animation: mymove 2s infinite;  /* Chrome, Safari, Opera */
+                -webkit-animation-timing-function: linear;  /* Chrome, Safari, Opera */
+                animation: mymove1 2s infinite;
+                animation-timing-function: linear;
+            }
+       
+            /* Chrome, Safari, Opera */
+            @-webkit-keyframes mymove1 {
+                from {left: -500px;}
+                to {right: 800px;}
+            }
+            .axis2 {
+                width: 1500px;
+                height: 100px;
+                background: #0066FF;
+                position: relative;
+                -webkit-animation: mymove2 2s infinite;  /* Chrome, Safari, Opera */
+                -webkit-animation-timing-function: linear;  /* Chrome, Safari, Opera */
+                animation: mymove 2s infinite;
+                animation-timing-function: linear;
+            }
+       
+            /* Chrome, Safari, Opera */
+            @-webkit-keyframes mymove2 {
+                from {right: -500px;}
+                to {left: 800px;}
+            }
+        .axis {
+            height: 22px;
+            margin-top: 31px;
+        }
+        </style>
+    <title></title>
+    </head>
+    
+<body style="margin: 0px; height: 530px; width: 1400px; background-image:url('../Background-Html51.jpg')">
+    <div  style="color: #FFFFCC; font-size: large; height: 109px;  vertical-align: middle; text-align: center;">
+        <div style="margin-top: 64px">
+            <img alt="" src="../Images/ribbon.png" /></div>
+       <div class="axis"> <strong>Html 404 : Bad Request</strong></div>
+       <div class="axis"> Page Not Found !</div>
+
+       <div class="axis">Click Here <a href="../Website/index.aspx" title="Home">Home</a> to Go.</div>
+
+      <!--<img class="axis1" src="../Images/ANM/image_part_001.jpg" alt="anm1" />
+         <img class="axis2" alt="anm2" src="../Images/ANM/image_part_002.jpg" />-->
+    </div>
+    
+</body>
+</html>

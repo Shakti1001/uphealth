@@ -1,0 +1,833 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Data.SqlClient;
+
+public partial class payrole_Salcalculation : System.Web.UI.Page
+{
+    ClDatabase cl = new ClDatabase();
+   
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+
+            //if ((string)Session["iduser"] == null)
+            //{
+            //    Response.Redirect("~/login.aspx"); ;//jump to first page for login
+            //}
+            salcalculation();
+        }
+    }
+
+    public void salcalculation()
+    {
+        string hd;
+        if ((string)Session["ddo"] != "" && Request.QueryString["Head"] != "" && Request.QueryString["year"] != "" && Request.QueryString["Month"] != "")
+        {
+            if (Request.QueryString["head"] == "0")
+            {            
+                hd = "where a.headid like '%' and a.ddoid=" + (string)Session["ddo"] + "";            
+            }
+            else
+            {
+                hd = "where a.headid=" + Request.QueryString["head"] + " and a.ddoid=" + (string)Session["ddo"] + "";
+            }////select empsalid from pay_allemp_salarydetails            
+            cl.ds = cl.DataFill("SELECT a.empsalaryid FROM salaryselect as b INNER JOIN EmployeeSalaryDetail as a ON b.idno = a.idno " + hd + " and a.Salmonth=" + Request.QueryString["Month"] + " and a.Salyear=" + Request.QueryString["year"] + "");
+            if (cl.ds.Tables[0].Rows.Count > 0)
+            {
+                //Response.Write("The salary Of this DDO,month and year have already generated");
+                this.mesg.Text = "The salary Of this DDO,month and year have already generated";
+                //cl.cmd = cl.InsertDB("delete from EmployeeSalaryDetail as a" + hd + " and a.Salmonth=" + Request.QueryString["Month"] + " and a.Salyear=" + Request.QueryString["year"] + "");
+            }
+            else
+            {
+                //////////////cl.ds = cl.DataFill2("SELECT     a.payid,b.ddoid, a.idno, a.empltypeid,  a.sectionid, a.headid, a.scaleid, a.bankid, a.bankaccno, a.paymode, a.incdueon, a.lastincdate, a.incstatus,a.gpfno, a.gpfcontstatus, a.plino, a.nomineename, a.SERVICED, a.basicpay, a.npaall, a.dearnesspay, a.da, a.hra, a.cca, a.perpay, a.tpay, a.sppay, a.attendance, a.pensionpay, a.othall1, a.othall2, a.othall3, a.othall4, a.othall5, a.othall6, a.fixall1, a.fixall2, a.fixall3, a.salarrear, a.otharrear, a.gpf,a.gisi, a.giss, a.incometax, a.hrr, a.salded, a.gpfadv, a.gpfinst, a.gpfinstot, a.gpfinspaid, a.hba1, a.hba1inst, a.hba1instot, a.hba1inspaid, a.hba2,a.hba2inst, a.hba2instot, a.hba2inspaid, a.hba3, a.hba3inst, a.hba3instot, a.hba3inspaid, a.vehadv, a.vehinst, a.vehinstot, a.vehinspaid, a.hba1iint,a.hba1iinst, a.hba1iinstot, a.hba1iinspaid, a.hba2iint, a.hba2iinst, a.hba2iinstot, a.hba2iinspaid, a.hba3iint, a.hba3iinst, a.hba3iinstot, a.hba3iinspaid,a.vehint, a.vehiinst, a.vehiinstot, a.vehiinspaid, a.coradv, a.corinst, a.corinstot, a.corinspaid, a.corint, a.coriinst, a.coriinstot, a.coriinspaid, a.ded1,a.ded2, a.ded3, a.gvr, a.pli, a.licded, a.remarks,  a.stopsal FROM         Pay_salentrymaster AS a INNER JOIN salaryselect as b ON a.idno = b.idno " + hd + "");
+                //**************Picking Record set****************************//a.modifieruserid, a.dataentrydate, a.hostipaddress,
+                //cl.ds = cl.DataFill2("SELECT  a.ddoid, b.payid, b.idno, b.empltypeid, b.ddocode, b.sectionid, b.headid, b.scaleid, b.bankid, b.bankaccno, b.paymode, b.incdueon, b.lastincdate,b.incstatus, b.gpfno, b.gpfcontstatus, b.plino, b.nomineename, b.attendance, b.basicpay, b.npaall, b.dearnesspay, b.pensionpay, b.da, b.Ehra, b.cca,b.perpay, b.tpay, b.sppay, b.gpf, b.Dhra, b.gisi, b.giss, b.incometax, b.salded, b.stopsal, b.remarks, b.modifieruserid, b.dataentrydate,b.hostipaddress FROM         salaryselect AS a INNER JOIN  Pay_salentrymaster AS b ON a.idno = b.idno " + hd + "");
+                cl.ds = cl.DataFill("SELECT a.stopsal,b.ddoid,a.sectionid, a.headid, a.scaleid,a.payid,a.idno, a.gpfno,a.attendance,a.basicpay, a.npaall, a.dearnesspay, a.da, a.hra, a.cca, a.perpay, a.tpay, a.sppay, a.pensionpay, a.othall1, a.othall2, a.othall3, a.othall4, a.othall5, a.othall6, a.fixall1, a.fixall2, a.fixall3, a.salarrear, a.otharrear, a.gpf,a.gisi, a.giss, a.incometax, a.hrr, a.salded, a.gpfadv, a.gpfinst, a.gpfinstot, a.gpfinspaid, a.hba1, a.hba1inst, a.hba1instot, a.hba1inspaid, a.hba2,a.hba2inst, a.hba2instot, a.hba2inspaid, a.hba3, a.hba3inst, a.hba3instot, a.hba3inspaid, a.vehadv, a.vehinst, a.vehinstot, a.vehinspaid, a.hba1iint,a.hba1iinst, a.hba1iinstot, a.hba1iinspaid, a.hba2iint, a.hba2iinst, a.hba2iinstot, a.hba2iinspaid, a.hba3iint, a.hba3iinst, a.hba3iinstot, a.hba3iinspaid,a.vehint, a.vehiinst, a.vehiinstot, a.vehiinspaid, a.coradv, a.corinst, a.corinstot, a.corinspaid, a.corint, a.coriinst, a.coriinstot, a.coriinspaid, a.ded1,a.ded2, a.ded3, a.gvr, a.pli, a.licded, a.remarks, a.empltypeid,a.plino,  a.bankid, a.bankaccno, a.paymode, a.incdueon, a.lastincdate, a.incstatus,   a.gpfcontstatus, a.nomineename, a.SERVICED FROM Pay_salentrymaster AS a INNER JOIN salaryselect AS b ON a.idno = b.idno " + hd + "");
+                int j;
+                if (cl.ds.Tables[0].Rows.Count > 0)
+                {
+                    Double basic, dearnesspay, hra, cca, npa, dapay, totpay, totded;
+                    //if (cl.ds.Tables[0].Rows[0][0].ToString() == "No")98
+                    for (j = 0; j <= cl.ds.Tables[0].Rows.Count - 1; j++)
+                    {
+                        if (cl.ds.Tables[0].Rows[0][j].ToString() == "No")
+                        {
+                           try
+        {
+                            if (ConnectionState.Closed == cl.upcon.State)
+                           {
+                            cl.upcon.Open();
+                            SqlCommand cmd = new SqlCommand("monthlyenrty", cl.upcon);
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            if (!(cl.ds.Tables[0].Rows[j][0].ToString().Equals(System.DBNull.Value)))
+                             {
+                                cmd.Parameters.Add("@stopsal", SqlDbType.VarChar,4).Value =cl.ds.Tables[0].Rows[j][0].ToString();
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[j][1].ToString().Equals(System.DBNull.Value)))
+                             {
+                                cmd.Parameters.Add("@ddoid", SqlDbType.Int, 4).Value =Convert.ToInt32(cl.ds.Tables[0].Rows[j][1].ToString());
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[j][2].ToString().Equals(System.DBNull.Value)))
+                             {
+                                cmd.Parameters.Add("@sectionid", SqlDbType.Int, 4).Value =Convert.ToInt32(cl.ds.Tables[0].Rows[j][2].ToString());
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[j][3].ToString().Equals(System.DBNull.Value)))
+                             {
+                                cmd.Parameters.Add("@headid", SqlDbType.Int, 4).Value =Convert.ToInt32(cl.ds.Tables[0].Rows[j][3].ToString());
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[j][4].ToString().Equals(System.DBNull.Value)))
+                             {
+                                cmd.Parameters.Add("@scaleid", SqlDbType.Int, 4).Value =Convert.ToInt32(cl.ds.Tables[0].Rows[j][4].ToString());
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[j][5].ToString().Equals(System.DBNull.Value)))
+                             {
+                                cmd.Parameters.Add("@payid", SqlDbType.Int, 4).Value =Convert.ToInt32(cl.ds.Tables[0].Rows[j][5].ToString());
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[j][6].ToString().Equals(System.DBNull.Value)))
+                             {
+                                cmd.Parameters.Add("@idno", SqlDbType.Int, 4).Value =Convert.ToInt32(cl.ds.Tables[0].Rows[j][6].ToString());
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[j][7].ToString().Equals(System.DBNull.Value)))
+                             {
+                                cmd.Parameters.Add("@gpfno", SqlDbType.VarChar,50).Value =cl.ds.Tables[0].Rows[j][7].ToString();
+                             }
+                             if (!(cl.ds.Tables[0].Rows[j][8].ToString().Equals(System.DBNull.Value)))
+                             {
+                                cmd.Parameters.Add("@attendance", SqlDbType.Int, 4).Value =Convert.ToInt32(cl.ds.Tables[0].Rows[j][8].ToString());
+                             }
+                            if (!(cl.ds.Tables[0].Rows[j][9].ToString().Equals(System.DBNull.Value)))//basicpay
+                             {
+                                 //basic = ((Convert.ToDouble(cl.ds.Tables[0].Columns["basicpay"].ColumnName.ToString()) / 30) * (Convert.ToDouble(cl.ds.Tables[0].Columns["attendance"].ColumnName.ToString());
+                               cmd.Parameters.Add("@basicpay", SqlDbType.Float, 8).Value =Convert.ToDouble(((Convert.ToDouble(cl.ds.Tables[0].Rows[j][9].ToString())/30)*(Convert.ToDouble(cl.ds.Tables[0].Rows[j][8].ToString()))));
+                              }
+                              //a.basicpay, a.npaall, a.dearnesspay, a.da, a.hra, a.cca, a.perpay, a.tpay, a.sppay, a.pensionpay, a.othall1, a.othall2, a.othall3, a.othall4, a.othall5, a.othall6, a.fixall1, a.fixall2, a.fixall3, a.salarrear, a.otharrear, a.gpf,a.gisi, a.giss, a.incometax, a.hrr, a.salded, a.gpfadv, a.gpfinst, a.gpfinstot, a.gpfinspaid, a.hba1, a.hba1inst, a.hba1instot, a.hba1inspaid, a.hba2,a.hba2inst, a.hba2instot, a.hba2inspaid, a.hba3, a.hba3inst, a.hba3instot, a.hba3inspaid, a.vehadv, a.vehinst, a.vehinstot, a.vehinspaid, a.hba1iint,a.hba1iinst, a.hba1iinstot, a.hba1iinspaid, a.hba2iint, a.hba2iinst, a.hba2iinstot, a.hba2iinspaid, a.hba3iint, a.hba3iinst, a.hba3iinstot, a.hba3iinspaid,a.vehint, a.vehiinst, a.vehiinstot, a.vehiinspaid, a.coradv, a.corinst, a.corinstot, a.corinspaid, a.corint, a.coriinst, a.coriinstot, a.coriinspaid, a.ded1,a.ded2, a.ded3, a.gvr, a.pli, a.licded, a.remarks, a.empltypeid,a.plino,  a.bankid, a.bankaccno, a.paymode, a.incdueon, a.lastincdate, a.incstatus,   a.gpfcontstatus, a.nomineename, a.SERVICED FROM Pay_salentrymaster AS a INNER JOIN salaryselect AS b ON a.idno = b.idno
+                            if (!(cl.ds.Tables[0].Rows[j][10].ToString().Equals(System.DBNull.Value)))
+                             {
+
+
+                                 //dearnesspay = ((Convert.ToDouble(cl.ds.Tables[0].Columns["dearnesspay"].ColumnName.ToString()) / 30) * Convert.ToDouble(cl.ds.Tables[0].Columns["attendance"].ColumnName.ToString()));
+                                 //hra = ((Convert.ToDouble(cl.ds.Tables[0].Columns["Ehra"].ColumnName.ToString()) / 30) * Convert.ToDouble(cl.ds.Tables[0].Columns["attendance"].ColumnName.ToString()));
+                                 //cca = ((Convert.ToDouble(cl.ds.Tables[0].Columns["cca"].ColumnName.ToString()) / 30) * Convert.ToDouble(cl.ds.Tables[0].Columns["attendance"].ColumnName.ToString()));
+                                 //npa = ((Convert.ToDouble(cl.ds.Tables[0].Columns["npaall"].ColumnName.ToString()) / 30) * Convert.ToDouble(cl.ds.Tables[0].Columns["attendance"].ColumnName.ToString()));
+                            
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             }
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             }
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             }
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             }
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             }
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             }
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             }
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             }
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             } 
+                            if (!(cl.ds.Tables[0].Rows[0][j].ToString().Equals(System.DBNull.Value)))
+                             {
+
+                             }
+                            
+                            
+                            
+                            } 
+                            
+                            }
+        catch (Exception ex)
+        {
+            Label1.Visible = true;
+            Label1.Text = ("Error :" + ex.Message);
+            Label1.Text = "Some error in value";
+        }
+        finally
+        {
+            if (ConnectionState.Open == cl.upcon.State)
+            {
+                cl.upcon.Close();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        
+                            
+                            cl.ds1 = cl.DataFill("select pervalue from pay_da where daid where daid=" + cl.ds.Tables[0].Columns["da"].ColumnName.ToString() + "");
+                            if (cl.ds1.Tables[0].Rows.Count > 0)
+                            {
+                                //double basic, dearnesspay, npa, hra, cca;
+                                //dapay = (basic + dearnesspay + npa) * (Convert.ToDouble(cl.ds1.Tables[0].Columns["pervalue"].ColumnName.ToString()) / 100);
+                            }
+                            else
+                            {
+                                dapay = 0;
+                            }
+                            //totpay = basic + Convert.ToDouble(cl.ds.Tables[0].Columns["sppay"].ColumnName.ToString()) + Convert.ToDouble(cl.ds.Tables[0].Columns["perpay"].ColumnName.ToString()) + dapay + hra + npa + Convert.ToDouble(cl.ds.Tables[0].Columns["salarrear"].ColumnName.ToString()) + Convert.ToDouble(cl.ds.Tables[0].Columns["otharrear"].ColumnName.ToString()) + cca + dearnesspay - Convert.ToDouble(cl.ds.Tables[0].Columns["salded"].ColumnName.ToString());
+                            cl.ds = cl.DataFill("");
+                            //totded = Convert.ToDouble(cl.ds.Tables[0].Columns["gisi"].ColumnName.ToString()) + Convert.ToDouble(cl.ds.Tables[0].Columns["giss"].ColumnName.ToString()) + Convert.ToDouble(cl.ds.Tables[0].Columns["incometax"].ColumnName.ToString()) + Convert.ToDouble(cl.ds.Tables[0].Columns["gpf"].ColumnName.ToString());// +res.fields("gpfinst");
+                        }
+
+                    }
+                    
+                }
+         
+            }
+            }
+        else
+        {
+            //Response.Write("Please Select Proper one... ");
+            this.mesg.Text = "Please Select Proper one... ";
+        }
+
+    }
+   
+    public void datDDDDDa()
+    
+    {
+//        if res("stopsal")="No" then
+
+//pbasic=round((cint(res("basicpay"))/30)*cint(res("attendance"))+0.000001,0)
+//dearnesspay=round((cint(res("dearnesspay"))/30)*cint(res("attendance"))+0.000001,0)
+//hra=round((cint(res("hra"))/30)*cint(res("attendance"))+0.000001,0)
+//cca=round((cint(res("cca"))/30)*cint(res("attendance"))+0.000001,0)
+//npaall=round((cint(res("npaall"))/30)*cint(res("attendance"))+0.000001,0)
+//set resdpay=con.execute("select pervalue from pay_da where daid="&trim(res("da"))&"") 
+//If resdpay.eof=false then dapay=round(((cint(pbasic)+cint(dearnesspay)+cint(npaall))*(resdpay("pervalue"))/100)+0.000001,0) else dapay=0
+
+//totpay= pbasic +res.fields("sppay") + res.fields("perpay")+ dapay +res.fields("othall1")+res.fields("othall2")+res.fields("othall3")+hra+npaall+res.fields("salarrear")+res.fields("otharrear")+cca+res.fields("othall4")+res.fields("hill")+res.fields("othall5")+res.fields("othall6")+dearnesspay+res.fields("pensionpay")+res.fields("fixall1")+res.fields("fixall2")+res.fields("fixall3")-res.fields("salded")
+//totded=res.fields("gvr")+res.fields("vehadv")+res.fields("vehint")+res.fields("hba1totded")+res.fields("hba2totded")+res.fields("hba3totded")+res.fields("coradv")+res.fields("hba1int")+res.fields("hba2int")+res.fields("hba3int")+res.fields("corint")+res.fields("pli")+res.fields("gisi")+res.fields("giss")+res.fields("incometax")+res.fields("ded1")+res.fields("ded2")+res.fields("ded3")+ res.fields("gpf") + res.fields("gpfinst")
+
+//qry1="select * from pay_allemp_salarydetails"
+//rs.open qry1,con,1,3
+//rs.addnew
+//rs("idno")=Trim(res("idno"))
+//rs("ddocode")=Trim(res("ddocode"))
+//rs("empltypeid")=Trim(res("empltypeid"))
+//'rs("deptid")=Trim(res("deptid"))
+//rs("sectionid")=Trim(res("sectionid"))
+//rs("headid")=Trim(res("headid"))
+//rs("scaleid")=Trim(res("scaleid"))
+//rs("bankid")=Trim(res("bankid"))
+//rs("bankaccno")=Trim(res("bankaccno"))
+//rs("paymode")=Trim(res("paymode"))
+//rs("incdueon")=Trim(res("incdueon"))
+//rs("lastincdate")=Trim(res("lastincdate"))
+//rs("incstatus")=Trim(res("incstatus"))
+//rs("gpfno")=Trim(res("gpfno"))
+//rs("gpfcontstatus")=Trim(res("gpfcontstatus"))
+//rs("plino")=Trim(res("plino"))
+//rs("nomineename")=trim(replace(res("nomineename"),"'",""))
+//rs("attendance")=Trim(res("attendance"))
+//rs("monthofentry")=trim(request("monthid"))
+//rs("yearofentry")=trim(request("year"))
+//rs("basicpay")=pbasic
+//rs("da")=Trim(res("da"))
+//rs("dapay")=dapay
+//rs("perpay")=Trim(res("perpay"))
+//rs("sppay")=Trim(res("sppay"))
+//rs("dearnesspay")=dearnesspay 
+//rs("pensionpay")=Trim(res("pensionpay"))
+//rs("othall1")=Trim(res("othall1"))
+//rs("othall2")=Trim(res("othall2"))
+//rs("othall3")=Trim(res("othall3"))
+//rs("othall4")=Trim(res("othall4"))
+//rs("othall5")=Trim(res("othall5"))
+//rs("othall6")=Trim(res("othall6"))
+//rs("fixall1")=Trim(res("fixall1"))
+//rs("fixall2")=Trim(res("fixall2"))
+//rs("fixall3")=Trim(res("fixall3"))
+//rs("npaall")=npaall
+//rs("hill")=Trim(res("hill"))
+//rs("salarrear")=Trim(res("salarrear"))
+//rs("otharrear")=Trim(res("otharrear"))
+//rs("gisi")=Trim(res("gisi"))
+//rs("giss")=Trim(res("giss"))
+//rs("hra")=hra
+//rs("cca")=cca
+//rs("hrr")=Trim(res("hrr"))
+//rs("gvr")=Trim(res("gvr"))
+//rs("incometax")=Trim(res("incometax"))
+//rs("gpf")=Trim(res("gpf"))
+//rs("gpfadv")=Trim(res("gpfadv"))
+//rs("gpfinst")=Trim(res("gpfinst"))
+//rs("gpftotded")=Trim(res("gpftotded"))
+//rs("gpfinspaid")=Trim(res("gpfinspaid"))
+//rs("gpfinstot")=Trim(res("gpfinstot"))
+//rs("pli")=Trim(res("pli"))
+//rs("licded")=Trim(res("licded"))
+//rs("hba1")=Trim(res("hba1"))
+//rs("hba1inst")=Trim(res("hba1inst"))
+//rs("hba1totded")=Trim(res("hba1totded"))
+//rs("hba1inspaid")=Trim(res("hba1inspaid"))
+//rs("hba1instot")=Trim(res("hba1instot"))
+//rs("hba2")=Trim(res("hba2"))
+//rs("hba2inst")=Trim(res("hba2inst"))
+//rs("hba2totded")=Trim(res("hba2totded"))
+//rs("hba2inspaid")=Trim(res("hba2inspaid"))
+//rs("hba2instot")=Trim(res("hba2instot"))
+//rs("hba3")=Trim(res("hba3"))
+//rs("hba3inst")=Trim(res("hba3inst"))
+//rs("hba3totded")=Trim(res("hba3totded"))
+//rs("hba3inspaid")=Trim(res("hba3inspaid"))
+//rs("hba3instot")=Trim(res("hba3instot"))
+//rs("vehadv")=Trim(res("vehadv"))
+//rs("vehinst")=Trim(res("vehinst"))
+//rs("vehtotded")=Trim(res("vehtotded"))
+//rs("vehinspaid")=Trim(res("vehinspaid"))
+//rs("vehinstot")=Trim(res("vehinstot"))
+//rs("vehtyp")=Trim(res("vehtyp"))
+//rs("hba1int")=Trim(res("hba1int"))
+//rs("hba1iinst")=Trim(res("hba1iinst"))
+//rs("hba1itotded")=Trim(res("hba1itotded"))
+//rs("hba1iinspaid")=Trim(res("hba1iinspaid"))
+//rs("hba1iinstot")=Trim(res("hba1iinstot"))
+//rs("hba2int")=Trim(res("hba2int"))
+//rs("hba2iinst")=Trim(res("hba2iinst"))
+//rs("hba2itotded")=Trim(res("hba2itotded"))
+//rs("hba2iinspaid")=Trim(res("hba2iinspaid"))
+//rs("hba2iinstot")=Trim(res("hba2iinstot"))
+//rs("hba3int")=Trim(res("hba3int"))
+//rs("hba3iinst")=Trim(res("hba3iinst"))
+//rs("hba3itotded")=Trim(res("hba3itotded"))
+//rs("hba3iinspaid")=Trim(res("hba3iinspaid"))
+//rs("hba3iinstot")=Trim(res("hba3iinstot"))
+//rs("vehint")=Trim(res("vehint"))
+//rs("vehiinst")=Trim(res("vehiinst"))
+//rs("vehitotded")=Trim(res("vehitotded"))
+//rs("vehiinspaid")=Trim(res("vehiinspaid"))
+//rs("vehiinstot")=Trim(res("vehiinstot"))
+//rs("vehitype")=Trim(res("vehitype"))
+//rs("coradv")=Trim(res("coradv"))
+//rs("corinst")=Trim(res("corinst"))
+//rs("cortotded")=Trim(res("cortotded"))
+//rs("corinspaid")=Trim(res("corinspaid"))
+//rs("corinstot")=Trim(res("corinstot"))
+//rs("coratyp")=Trim(res("coratyp"))
+//rs("corint")=Trim(res("corint"))
+//rs("coriinst")=Trim(res("coriinst"))
+//rs("coritotded")=Trim(res("coritotded"))
+//rs("coriinspaid")=Trim(res("coriinspaid"))
+//rs("coriinstot")=Trim(res("coriinstot"))
+//rs("corityp")=Trim(res("corityp"))
+//rs("payded")=Trim(res("payded"))
+//rs("suspendper")=Trim(res("suspendper"))
+//rs("suspenddays")=Trim(res("suspenddays"))
+//rs("stopsal")=Trim(res("stopsal"))
+//rs("ded1")=Trim(res("ded1"))
+//rs("ded2")=Trim(res("ded2"))
+//rs("ded3")=Trim(res("ded3"))
+//rs("socded")=Trim(res("socded"))
+//rs("remarks")=Trim(res("remarks"))
+//rs("dataenteredby")=session("userid")
+//rs("dataentrydate")=now()
+//rs("hostipaddress")=trim(Request.ServerVariables("REMOTE_HOST"))
+//rs("salded")=Trim(res("salded"))
+//rs("totpay")=totpay
+//rs("totded")=totded
+//rs.update
+//rs.close
+
+
+//else
+
+
+//qry2="select * from pay_allemp_salarydetails"
+//rs.open qry2,con,1,3
+//rs.addnew
+//rs("idno")=Trim(res("idno"))
+//rs("ddocode")=Trim(res("ddocode"))
+//rs("empltypeid")=Trim(res("empltypeid"))
+//'rs("deptid")=Trim(res("deptid"))
+//rs("sectionid")=Trim(res("sectionid"))
+//rs("headid")=Trim(res("headid"))
+//rs("scaleid")=Trim(res("scaleid"))
+//rs("bankid")=Trim(res("bankid"))
+//rs("bankaccno")=Trim(res("bankaccno"))
+//rs("paymode")=Trim(res("paymode"))
+//rs("incdueon")=Trim(res("incdueon"))
+//rs("lastincdate")=Trim(res("lastincdate"))
+//rs("incstatus")=Trim(res("incstatus"))
+//rs("gpfno")=Trim(res("gpfno"))
+//rs("gpfcontstatus")=Trim(res("gpfcontstatus"))
+//rs("plino")=Trim(res("plino"))
+//rs("nomineename")=trim(replace(res("nomineename"),"'",""))
+//rs("attendance")=Trim(res("attendance"))
+//rs("monthofentry")=trim(request("monthid"))
+//rs("yearofentry")=trim(request("year"))
+//rs("basicpay")=0
+//rs("da")=0
+//rs("dapay")=0
+//rs("perpay")=0
+//rs("sppay")=0
+//rs("dearnesspay")=0
+//rs("pensionpay")=0
+//rs("othall1")=0
+//rs("othall2")=0
+//rs("othall3")=0
+//rs("othall4")=0
+//rs("othall5")=0
+//rs("othall6")=0
+//rs("fixall1")=0
+//rs("fixall2")=0
+//rs("fixall3")=0
+//rs("npaall")=0
+//rs("hill")=0
+//rs("salarrear")=0
+//rs("otharrear")=0
+//rs("gisi")=0
+//rs("giss")=0
+//rs("hra")=0
+//rs("cca")=0
+//rs("hrr")=0
+//rs("gvr")=0
+//rs("incometax")=0
+//rs("gpf")=0
+//rs("gpfadv")=0
+//rs("gpfinst")=0
+//rs("gpftotded")=0
+//rs("gpfinspaid")=0
+//rs("gpfinstot")=0
+//rs("pli")=0
+//rs("licded")=0
+//rs("hba1")=0
+//rs("hba1inst")=0
+//rs("hba1totded")=0
+//rs("hba1inspaid")=0
+//rs("hba1instot")=T0
+//rs("hba2")=0
+//rs("hba2inst")=0
+//rs("hba2totded")=0
+//rs("hba2inspaid")=0
+//rs("hba2instot")=0
+//rs("hba3")=0
+//rs("hba3inst")=0
+//rs("hba3totded")=0
+//rs("hba3inspaid")=0
+//rs("hba3instot")=0
+//rs("vehadv")=0
+//rs("vehinst")=0
+//rs("vehtotded")=0
+//rs("vehinspaid")=0
+//rs("vehinstot")=0
+//rs("vehtyp")=0
+//rs("hba1int")=0
+//rs("hba1iinst")=0
+//rs("hba1itotded")=0
+//rs("hba1iinspaid")=0
+//rs("hba1iinstot")=0
+//rs("hba2int")=0
+//rs("hba2iinst")=0
+//rs("hba2itotded")=0
+//rs("hba2iinspaid")=0
+//rs("hba2iinstot")=0
+//rs("hba3int")=0
+//rs("hba3iinst")=0
+//rs("hba3itotded")=0
+//rs("hba3iinspaid")=0
+//rs("hba3iinstot")=0
+//rs("vehint")=0
+//rs("vehiinst")=0
+//rs("vehitotded")=0
+//rs("vehiinspaid")=0
+//rs("vehiinstot")=0
+//rs("vehitype")=0
+//rs("coradv")=0
+//rs("corinst")=0
+//rs("cortotded")=0
+//rs("corinspaid")=0
+//rs("corinstot")=0
+//rs("coratyp")=0
+//rs("corint")=0
+//rs("coriinst")=0
+//rs("coritotded")=0
+//rs("coriinspaid")=0
+//rs("coriinstot")=0
+//rs("corityp")=0
+//rs("payded")=0
+//rs("suspendper")=0
+//rs("suspenddays")=0
+//rs("stopsal")=0
+//rs("ded1")=0
+//rs("ded2")=0
+//rs("ded3")=0
+//rs("socded")=0
+//rs("remarks")=Trim(res("remarks"))
+//rs("dataenteredby")=session("userid")
+//rs("dataentrydate")=now()
+//rs("hostipaddress")=trim(Request.ServerVariables("REMOTE_HOST"))
+//rs("salded")=0
+//rs("totpay")=0
+//rs("totded")=0
+//rs.update
+//rs.close
+//end if
+
+//res.movenext
+//i=i+1
+//wend
+
+    }
+}

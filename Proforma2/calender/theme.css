@@ -1,0 +1,84 @@
+.theme {
+	COLOR: #000000; BACKGROUND-COLOR: #003c78
+}
+.themeText {
+	COLOR: #003c78
+}
+.themeBack {
+	COLOR: white; BACKGROUND-COLOR: #000000
+}
+.themeBackText {
+	FONT-SIZE: 1em; COLOR: white; FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif
+}
+.themeBackText2 {
+	FONT-SIZE: 1em; COLOR: red; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.themeBackArrow {
+	FONT-SIZE: 0.9em
+}
+.linkColour {
+	COLOR: #000044
+}
+.tableFormCell {
+	COLOR: white; BACKGROUND-COLOR: #003c78
+}
+.tableHeaderCell {
+	COLOR: black; BACKGROUND-COLOR: #e4e4f5
+}
+.tableInputFormCell {
+	COLOR: #000000; BACKGROUND-COLOR: #003c78
+}
+.tableInputFormCell2 {
+	COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+.tableMouseOutCell {
+	CURSOR: hand; COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+.tableMouseOverCell {
+	CURSOR: hand; COLOR: white; BACKGROUND-COLOR: #003c78
+}
+.headerFont {
+	FONT-WEIGHT: bold; FONT-SIZE: 0.9em; COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.headerFont2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 0.7em; COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.calenderColor {
+	BACKGROUND-COLOR: #003c78
+}
+.errorMessageBox {
+	BORDER-RIGHT: #ffd200 1px solid; BORDER-TOP: #ffd200 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 0.7em; PADDING-BOTTOM: 15px; MARGIN-LEFT: auto; BORDER-LEFT: #ffd200 1px solid; WIDTH: 580px; COLOR: #ff0000; MARGIN-RIGHT: auto; PADDING-TOP: 15px; BORDER-BOTTOM: #ffd200 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #fffed6; TEXT-ALIGN: center
+}
+.successMessageBox {
+	BORDER-RIGHT: #ffd200 1px solid; BORDER-TOP: #ffd200 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 0.7em; PADDING-BOTTOM: 15px; BORDER-LEFT: #ffd200 1px solid; WIDTH: 580px; COLOR: #000000; PADDING-TOP: 15px; BORDER-BOTTOM: #ffd200 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #fffed6; TEXT-ALIGN: center
+}
+INPUT.buttonNormal {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 0.7em; BACKGROUND-IMAGE: url(../../images/xp/btn_Normal.gif); BORDER-LEFT: medium none; WIDTH: 120px; CURSOR: hand; COLOR: #000000; BORDER-BOTTOM: medium none; FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif; HEIGHT: 29px; BACKGROUND-COLOR: #e4e4f5
+}
+INPUT.buttonNormal#Back {
+	PADDING-LEFT: 30px; BACKGROUND-IMAGE: url(../../images/xp/btn_Backward.gif)
+}
+INPUT.buttonNormal#AddNew {
+	PADDING-RIGHT: 30px; BACKGROUND-IMAGE: url(../../images/xp/btn_Add.gif)
+}
+INPUT.buttonNormal#Install {
+	PADDING-RIGHT: 30px; BACKGROUND-IMAGE: url(../../images/xp/btn_Install.gif)
+}
+INPUT.buttonNormal#Uninstall {
+	PADDING-RIGHT: 30px; BACKGROUND-IMAGE: url(../../images/xp/btn_Uninstall.gif)
+}
+INPUT.buttonNormal#Print {
+	PADDING-RIGHT: 30px; BACKGROUND-IMAGE: url(../../images/xp/btn_Print.gif)
+}
+INPUT.buttonNormal#Forward {
+	PADDING-RIGHT: 30px; BACKGROUND-IMAGE: url(../../images/xp/btn_Forward.gif)
+}
+INPUT.buttonNormal#Processing {
+	PADDING-RIGHT: 30px; BACKGROUND-IMAGE: url(../../images/xp/btn_Processing.gif)
+}
+INPUT.buttonNormal#ProcessingPreload {
+	DISPLAY: none; BACKGROUND-IMAGE: url(../../images/xp/btn_Processing.gif)
+}
+INPUT.buttonNormal#Delete {
+	PADDING-RIGHT: 30px; BACKGROUND-IMAGE: url(../../images/xp/btn_Delete.gif)
+}

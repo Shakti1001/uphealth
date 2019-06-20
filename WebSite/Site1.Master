@@ -1,0 +1,620 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="NewWebApp.WebSite.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en" runat="server">
+<meta content="" charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          
+    <title>Welcome::Official Website Of UP Health</title>
+    <link rel="Shortcut Icon" href="../Images/headlogo.png" />
+    
+    
+	    <link href="~/CssFile/NewsTicker.css" rel="stylesheet" type="text/css" />
+    <link href="../CssFile/site.css" rel="stylesheet" type="text/css" />
+        <link type="text/css" href="../CssFile/animate.css" rel="stylesheet"/>
+       <link href="../CssFile/css1.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+    <link href="../CssFile/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    
+    <style type="text/css">
+        #relativeBody,{display:none;}body{top:0!important;}</style>
+   
+   <style type="text/css">
+   .col-sm-3
+   {
+       float:left;
+   }
+   .top
+   {
+       float:left;
+       text-align:right;
+   }
+    .google-maps {
+        position: relative;
+        height: 220px;
+        width:100%;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+   .userCss
+   {
+       float:left;
+       text-align:justify;
+   }
+    .maps {
+       
+        background-color: orange;
+      }
+   .userCss1
+   {
+       text-align:center;
+       float:left;
+       
+   }
+  
+     .col-sm-6
+   {
+       text-align:left;
+       float:left;
+   }
+   .button1 {font-size: 10px;}
+   .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin:0px;
+    cursor: pointer;
+}
+html {
+  font-size: 14px;
+}
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 16px;
+  }
+}
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 18px;
+  }
+}
+#middle
+{
+    width:100%;
+    height:auto;
+    float:left;
+}
+.col-lg-2
+{
+    float:left;
+}
+.col-lg-8
+{
+    float:left;
+   
+}
+@media screen and (max-width:768px) 
+{
+   
+
+.image{
+
+display:none;
+
+}
+.skipt
+{
+    display:none;
+}
+
+}
+.wow:first-child
+{
+    visibility:inherit;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+#overlay{
+  position:fixed;
+  z-index:99999;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background:rgba(0,0,0,0.9);
+  transition: 1s 0.4s;
+}
+#progress{
+  height:1px;
+  background:#fff;
+  position:absolute;
+  width:0;                /* will be increased by JS */
+  top:50%;
+}
+#progstat{
+  font-size:0.7em;
+  letter-spacing: 3px;
+  position:absolute;
+  top:50%;
+  margin-top:-40px;
+  width:100%;
+  text-align:center;
+  color:#fff;
+}
+.activeli{
+	color: black !important;
+}
+
+.navbar-nav li a{
+	color: black !important;
+}
+
+.navbar-nav li :hover {
+	background-color: #800000 !important;
+	
+}
+
+.navbar-nav>.active>a{
+	background-color:#1175d1 !important
+}
+
+.dropdown:hover  .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    background-color: #ffaa33 !important;
+ }
+
+.navbar-nav>li>.dropdown>li{
+	background-color: #800000 !important;
+}
+
+   </style>
+   
+  
+  
+       
+
+ 
+  
+  
+        
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="relativeBody">
+<div id="google_translate_element" style="display:none"></div>
+<noscript>
+ For full functionality of this site it is necessary to enable JavaScript of your web browser...
+</noscript> 
+ 
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><span class="glyphicon glyphicon-arrow-up"></span></button>
+
+<div class="container chColor" id="chCol">
+
+<div class="col-sm-12 col-md-12 col-lg-12">
+<div class="container">
+<div class="row ChCo">
+<div class="col-sm-3 skipt">
+    
+<a href="#skipContent" title="Skip to main content" >Skip To Main Content</a>
+</div>
+<div class="col-sm-9 top" >
+  <iframe src="http://free.timeanddate.com/clock/i67aoxpx/n545/tluk/fn7/fc900/tct/pct/ftb/pd2/tt0/tw0/tm2/td2/th2/tb1" frameborder="0" width="185" height="21" allowTransparency="true"></iframe>&nbsp;|&nbsp;
+<a href="https://www.nvaccess.org/download/" target="_blank" title="Screen Reader">Screen Reader</a>&nbsp;|&nbsp;
+<a href="#" title="SiteMap"><img src="../Images/36871.png" alt="SiteMap" title="SiteMap" width="15" height="15" /></a>&nbsp;|&nbsp;
+<a href="#" id="dec" title="Increment" style="text-align:right;">A-</a>&nbsp;|&nbsp;
+<a href="#" id="normal" title="Increment" style="text-align:right;" onclick="window.location.reload()">A</a>&nbsp;|&nbsp;
+<a href="#" id="inc" title="Increment"style="text-align:right;">A+</a>&nbsp;|&nbsp;
+<a href="#" id="A1" title="Increment"style="text-align:right;" onclick="change1()">A</a>&nbsp;|&nbsp;
+<a href="#" id="A2" title="Increment"style="text-align:right;" onclick="change()">A</a>&nbsp;|&nbsp;
+
+<button class="btn btn-success" value="hi" id="language" onclick="changeLanguageByButtonClick();"><span class="glyphicon glyphicon-check"></span>हिंदी</button>
+   
+    </div>
+    </div>
+    </div>
+    </div>
+    <div id="middle" class="col-sm-12">   
+    <div class="row"> 
+    <div class="col-sm-8 col-md-8 col-lg-8">
+    <p class="main-content">
+    <img src="../Images/headlogo.png" alt="UPGovernment" class="image img-responsive imgr" width="100px" height="30px" /><h4 style="text-align:left; float:left;"><b>DEPARTMENT OF MEDICAL HEALTH & FAMILY WELFARE</b></h4>
+    <h4 style="text-align:left; float:left;"><b>चिकित्सा स्वास्थ्य एवं परिवार कल्याण विभाग (उत्तर प्रदेश)</b></h4>    
+    </p>
+    </div>       
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <img src="../Images/Digital_India_empower_youth.jpg" alt="Digital India" class="image img-responsive" width="180px" height="30px" style="float:right;" />
+    </div>
+    </div>  
+    </div>
+    <div class="container-fluid">
+  <nav id="skipContent" class="navbar navbar-expand-lg navbar-light" style="background-color: #ff9933;">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.aspx"><b><span class="glyphicon glyphicon-home"></span>Home</b><span class="sr-only">(current)</span></a>
+      </li>
+     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="A3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <b>Department</b>
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" target="_self" href="aboutUs.aspx"><b>About Us</b></a>
+          <a class="dropdown-item" target="_self" href="intro.aspx"><b>Introduction</b></a>
+         <a class="dropdown-item" target="_self" href="organizationalStruct.aspx"><b>Organizational Structure</b></a>
+          <a class="dropdown-item" target="_self" href="fieldOrganisation.aspx"><b>Field Organizational Structure</b></a>
+        </div>
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="A5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <b>Health Facilities</b>
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" target="_self" href="dhmale-map.aspx"><b>District Hospital Male</b></a>
+          <a class="dropdown-item" target="_self" href="dhfemale.aspx"><b>District Hospital Female</b></a>
+         <a class="dropdown-item" target="_self" href="chc.aspx"><b>Community Health Center</b></a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="A6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <b>Directory</b>
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" target="_self" href="telephone.aspx"><b>Telephone Directory</b></a>
+          <a class="dropdown-item" target="_self" href="email.aspx"><b>Email Directory</b></a>
+        
+        </div>
+      </li>
+        
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="A8" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <b>Projects</b>
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" target="_blank" href="http://nhm.gov.in/"><b>NHM</b></a>
+          <a class="dropdown-item" target="_blank" href="http://uphealth.up.nic.in/uphssp/index.htm"><b>UPHSSP</b></a>
+          <a class="dropdown-item" target="_blank" href="http://www.sifpsa.org/"><b>SIFPSA</b></a>
+          <a class="dropdown-item" target="_blank" href="http://upaidscontrol.up.nic.in/"><b>UPAIDS</b></a>
+         
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <b>Acts & Rules</b>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" target="_blank"  href=""><b>Pre Nantal Diagnostic Technique(Act 1994)</b></a>
+          <a class="dropdown-item" target="_blank" href="../Documents/Notification_of_Tobacco_Control_Act_2003.pdf"><b>Notification Of Tobacco Control</b></a>
+          <a class="dropdown-item" target="_blank" href="../Documents/tobacco_control_act-2003.pdf"><b>The cigarette & Other Tobacco Products</b></a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../Authenticate/login.aspx"><b>PIS</b></a>
+      </li>
+       
+    
+    </ul>
+    
+    <form id="searchForm" class="form-inline my-2 my-lg-0">
+     <div class="input-group">
+      <input type="text" id="searchItem" class="form-control" placeholder="Search..."/>&nbsp;&nbsp;
+   <%--   <button id="go" class="btn btn-success" type="button" ><span class="glyphicon glyphicon-search"></span>Search </button>--%>
+     
+   </div>
+     
+    </form>
+    </div>
+</nav>
+
+   
+
+   </div>
+   <br />
+    <form id="form1" runat="server">
+    
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+       
+    </form>
+
+   
+     <div class="row">
+         <div class="col-sm-12 col-lg-12 col-md-12 ">
+            <div class="col-sm-8" style="float:left;">   
+                <div class="panel panel-default">
+                    <br /><br />
+                    <div class="panel panel-heading"><center><h4>Map</h4></center></div>
+                    <div class="panel panel-body">
+                        <br />
+                      <div class="google-maps"><iframe    src="https://maps.google.com/maps?q=swasthya%20bhawan%2C%20lucknow&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></>
+                    </div>
+                </div>
+                        
+                  
+              
+          </div>      
+    </div>
+             <div class="col-sm-4" style="float:left;">
+                <div class="panel panel-default">
+                    <br /><br />
+                    <div class="panel panel-heading"><center><h4>Address</h4></center></div>
+                    <div class="panel panel-body">
+                        <br />
+                     <b><center>Swasthya Bhawan, Raja Nawab Ali Marg, Qaiserbagh, Lucknow, Uttar Pradesh 226001</center></b><br />
+                        <span class="input-group-addon"><center><i class="glyphicon glyphicon-phone-alt blue"></i>Telephone No :- 0522 2230017</center></span>
+                      
+                        <br />
+                        <b><center>स्वास्थ्य भवन, राजा नवाब अली मार्ग, क़ैसरबाग़, लखनऊ, उत्तर प्रदेश २२६००१</center></b>
+                        <br />
+                         <span class="input-group-addon"><center><i class="glyphicon glyphicon-phone-alt blue"></i>दूरभाष संख्या :- ०५२२ २२३००१७</center></span>
+
+                    </div>
+                </div>
+             </div>
+
+         </div>
+             <div class="container">
+    <div class="row wow fadeIn" data-wow-duration="8s">
+     <div class="col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+     <nav aria-label="breadcrumb">
+     
+  <ol class="breadcrumb">
+ 
+    <li class="breadcrumb-item" ><a href="WebSitePolicies.aspx">Website Policies</a></li>
+    <li class="breadcrumb-item" ><a href="help.aspx">Help</a></li>
+    <li class="breadcrumb-item" ><a href="contactUs.aspx">Contact Us</a></li>
+    <li class="breadcrumb-item" ><a href="feedback.aspx">Feedback</a></li>
+   
+  </ol>
+ 
+</nav>
+
+     </div>
+     </div>
+     </div>
+     <div class="col-sm-12">
+     <div class="col-sm-3">
+     <a href="http://up.nic.in/" target="_blank" title="National Informatics Center">
+     <img src="../Images/nic.gif" alt="National Informatics Center" style="float:left;" width="100%" height="50px" />
+     </a>
+     </div>
+     <div class="col-sm-6">
+      <p class="text-primary text-secondary">This Website is designed & hosted by <b>National Informatics Center, Lucknow.</b> Content provided on this website is owned by <strong>Department Of Medical Health & Family Welfare.</strong></p>
+     </div>
+     <div class="col-sm-3">
+     <a href="http://digitalindia.gov.in/" target="_blank" title="Swachh Bharat Mission">
+     <img src="../Images/swachh-bharat-abhiyan-logo-vector-file-768x334.jpg" alt="Digital India Program" style="float:right;" width="80%" height="50px"  />
+     </a>
+     </div>
+     </div>
+     </div>
+    
+     
+     </div>
+      <script type="text/javascript" src='<%=Page.ResolveUrl("~/JsFile/jquery-1.4.4.min.js")%>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveUrl("~/JsFile/ticker.js")%>'></script>
+     <%--   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
+    <script type="text/javascript" src="../JsFile/jquery.min.js"></script>
+    
+         <script src="../JsFile/formlogin.js" type="text/javascript"></script>
+   
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="../JsFile/wow.js" type="text/javascript"></script>
+ 
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../JsFile/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+   
+    <script type="text/javascript">
+        $(document).ready(function () {
+            startTicker('#latestNews3', 7, 3000);
+        });
+    </script>
+      <script type="text/javascript">
+         
+          $(document).ready(function () {
+              $('#searchItem').on('keyup', function () {
+                  var value = $(this).val().toLowerCase();
+                  $('#ContentPlaceHolder1 *').filter(function () {
+                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                  });
+              });
+          });
+</script>
+
+
+     
+    <script type="text/javascript">
+
+        wow = new WOW(
+      {
+          animateClass: 'animated',
+          offset: 100,
+          callback: function (box) {
+              console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+          }
+      }
+    );
+        wow.init();
+        document.getElementById('moar').onclick = function () {
+            var section = document.createElement('section');
+            section.className = 'section--purple wow fadeInDown';
+            this.parentNode.insertBefore(section, this);
+        };
+    </script>
+    <script type="text/javascript">
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+</script>
+ <script type="text/javascript">
+       function change() {
+           document.body.style.backgroundColor = "#333333"
+           document.getElementById("relativeBody").style.color = "yellow";
+       }
+       function change1() {
+           document.body.style.backgroundColor = "#fff1e4"
+           document.getElementById("relativeBody").style.color = "black";
+       }
+       $('document').ready(function () {          
+               $('#inc').click(function () {
+                   curSize = parseInt($('#relativeBody').css('font-size')) + 1;
+                   $('#relativeBody').css('font-size', curSize);            
+               });   
+           $('#dec').click(function () {
+               curSize = parseInt($('#relativeBody').css('font-size')) - 1;
+               $('#relativeBody').css('font-size', curSize);
+           });
+
+
+
+
+       });
+
+      
+       </script>
+  
+ 
+     <script type="text/javascript">
+         ; (function () {
+             function id(v) { return document.getElementById(v); }
+             function loadbar() {
+                 var ovrl = id("overlay"),
+        prog = id("progress"),
+        stat = id("progstat"),
+        img = document.images,
+        c = 0,
+        tot = img.length;
+                 if (tot == 0) return doneLoading();
+
+                 function imgLoaded() {
+                     c += 1;
+                     var perc = ((100 / tot * c) << 0) + "%";
+                     prog.style.width = perc;
+                     stat.innerHTML = "Loading " + perc;
+                     if (c === tot) return doneLoading();
+                 }
+                 function doneLoading() {
+                     ovrl.style.opacity = 0;
+                     setTimeout(function () {
+                         ovrl.style.display = "none";
+                     }, 1200);
+                 }
+                 for (var i = 0; i < tot; i++) {
+                     var tImg = new Image();
+                     tImg.onload = imgLoaded;
+                     tImg.onerror = imgLoaded;
+                     tImg.src = img[i].src;
+                 }
+             }
+             document.addEventListener('DOMContentLoaded', loadbar, false);
+         } ());
+     
+     </script>
+   <script type="text/javascript">
+       function search() {
+
+           var name = document.getElementById("searchForm").elements["searchItem"].value;
+           var pattern = name.toLowerCase();
+           var targetId = "";
+
+           var divs = document.getElementsByClassName("container");
+           for (var i = 0; i < divs.length; i++) {
+               var para = divs[i].getElementsByTagName("p");
+               var index = para[0].innerText.toLowerCase().indexOf(pattern);
+               if (index != -1) {
+                   targetId = divs[i].parentNode.id;
+                   document.getElementById(targetId).scrollIntoView();
+                   break;
+               }
+           }
+       }
+</script>
+<script type="text/javascript">
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: "en" }, 'google_translate_element');
+    }
+
+    function changeLanguageByButtonClick() {
+        var language = document.getElementById("language").value;
+        var selectField = document.querySelector("#google_translate_element select");
+        for (var i = 0; i < selectField.children.length; i++) {
+            var option = selectField.children[i];
+            // find desired langauge and change the former language of the hidden selection-field 
+            if (option.value == language) {
+                selectField.selectedIndex = i;
+                // trigger change event afterwards to make google-lib translate this side
+                selectField.dispatchEvent(new Event('change'));
+                break;
+            }
+        }
+    }
+</script>
+
+<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+
+
+
+
+</body>
+</html>

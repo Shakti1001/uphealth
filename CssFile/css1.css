@@ -1,0 +1,92 @@
+﻿#relativeBody
+{
+    background-color:#fff1e4;
+}
+
+.chColor
+{
+    background-color:White;
+}
+.main-content .imgr{
+   float: left;
+   padding: 0 5px 5px 0;
+}
+
+
+
+
+.title2
+{
+float:left;
+    text-align:center;
+}
+.title1
+{
+    float:left;
+    text-align:right;
+}
+
+.glyphicon {
+
+margin-right: 4px !important; /*override*/
+
+}
+
+.pagination .glyphicon {
+
+margin-right: 0px !important; /*override*/
+
+}
+
+.pagination a {
+
+color: #555;
+
+}
+
+.panel ul {
+
+padding: 0px;
+
+margin: 0px;
+
+list-style: none;
+
+}
+
+.news-item {
+
+padding: 4px 4px;
+
+margin: 0px;
+
+border-bottom: 1px dotted #555;
+
+}
+
+.breadcrumbs{
+    height: 100px;
+    text-align:center;
+    line-height:50px;
+}
+.userCss
+   {
+       float:left;
+       text-align:justify;
+   }
+   .userCss1
+   {
+       text-align:center;
+       float:left;
+       
+   }
+   .ChCo
+   {
+       background-color:#ff9933;
+   }
+@import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css")
+
+ 	
+
+
+

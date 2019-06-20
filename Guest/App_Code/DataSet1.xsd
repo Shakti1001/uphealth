@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="uphsdpConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="uphsdpConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.uphsdpConnectionString.ConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="uphsdpcon" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="uphsdpcon (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.uphsdpcon.ConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hospitallistTableAdapter" GeneratorDataComponentClassName="hospitallistTableAdapter" Name="hospitallist" UserDataComponentName="hospitallistTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="uphsdpcon (Web.config)" DbObjectName="healthpis.dbo.hospitallist" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="False" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT     divname, districtname, tehsilname, blockname, htype, hname, sno, bedoccupacy, blockid FROM         hospitallist WHERE     (districtid = 27) </CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="divname" DataSetColumn="divname" />
+              <Mapping SourceColumn="districtname" DataSetColumn="districtname" />
+              <Mapping SourceColumn="tehsilname" DataSetColumn="tehsilname" />
+              <Mapping SourceColumn="blockname" DataSetColumn="blockname" />
+              <Mapping SourceColumn="htype" DataSetColumn="htype" />
+              <Mapping SourceColumn="hname" DataSetColumn="hname" />
+              <Mapping SourceColumn="sno" DataSetColumn="sno" />
+              <Mapping SourceColumn="bedoccupacy" DataSetColumn="bedoccupacy" />
+              <Mapping SourceColumn="blockid" DataSetColumn="blockid" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="hospitallist" msprop:Generator_UserTableName="hospitallist" msprop:Generator_RowDeletedName="hospitallistRowDeleted" msprop:Generator_TableClassName="hospitallistDataTable" msprop:Generator_RowChangedName="hospitallistRowChanged" msprop:Generator_RowClassName="hospitallistRow" msprop:Generator_RowChangingName="hospitallistRowChanging" msprop:Generator_RowEvArgName="hospitallistRowChangeEvent" msprop:Generator_RowEvHandlerName="hospitallistRowChangeEventHandler" msprop:Generator_TablePropName="hospitallist" msprop:Generator_TableVarName="tablehospitallist" msprop:Generator_RowDeletingName="hospitallistRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="divname" msprop:Generator_UserColumnName="divname" msprop:Generator_ColumnPropNameInRow="divname" msprop:Generator_ColumnVarNameInTable="columndivname" msprop:Generator_ColumnPropNameInTable="divnameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="districtname" msprop:Generator_UserColumnName="districtname" msprop:Generator_ColumnPropNameInRow="districtname" msprop:Generator_ColumnVarNameInTable="columndistrictname" msprop:Generator_ColumnPropNameInTable="districtnameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tehsilname" msprop:Generator_UserColumnName="tehsilname" msprop:Generator_ColumnPropNameInRow="tehsilname" msprop:Generator_ColumnVarNameInTable="columntehsilname" msprop:Generator_ColumnPropNameInTable="tehsilnameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="blockname" msprop:Generator_UserColumnName="blockname" msprop:Generator_ColumnPropNameInRow="blockname" msprop:Generator_ColumnVarNameInTable="columnblockname" msprop:Generator_ColumnPropNameInTable="blocknameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="htype" msprop:Generator_UserColumnName="htype" msprop:Generator_ColumnPropNameInRow="htype" msprop:Generator_ColumnVarNameInTable="columnhtype" msprop:Generator_ColumnPropNameInTable="htypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hname" msprop:Generator_UserColumnName="hname" msprop:Generator_ColumnPropNameInRow="hname" msprop:Generator_ColumnVarNameInTable="columnhname" msprop:Generator_ColumnPropNameInTable="hnameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sno" msprop:Generator_UserColumnName="sno" msprop:Generator_ColumnPropNameInRow="sno" msprop:Generator_ColumnVarNameInTable="columnsno" msprop:Generator_ColumnPropNameInTable="snoColumn" type="xs:int" />
+              <xs:element name="bedoccupacy" msprop:Generator_UserColumnName="bedoccupacy" msprop:Generator_ColumnPropNameInRow="bedoccupacy" msprop:Generator_ColumnVarNameInTable="columnbedoccupacy" msprop:Generator_ColumnPropNameInTable="bedoccupacyColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="blockid" msprop:Generator_UserColumnName="blockid" msprop:Generator_ColumnPropNameInRow="blockid" msprop:Generator_ColumnVarNameInTable="columnblockid" msprop:Generator_ColumnPropNameInTable="blockidColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

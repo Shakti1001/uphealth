@@ -1,0 +1,271 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="NewWebApp.Guest.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" lang="en" runat="server">
+<meta content="" charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+       
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title></title>
+    
+     <script type="text/javascript" src='<%=Page.ResolveUrl("~/JsFile/jquery-1.4.4.min.js")%>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveUrl("~/JsFile/ticker.js")%>'></script>
+	    <link href="~/CssFile/NewsTicker.css" rel="stylesheet" type="text/css" />
+    <link href="../CssFile/print.css" rel="stylesheet" type="text/css" />
+    <link href="../CssFile/site.css" rel="stylesheet" type="text/css" />
+        <link type="text/css" href="../CssFile/animate.css" rel="stylesheet"/>
+       <link href="../CssFile/css1.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+    <link href="../CssFile/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <script src="../JsFile/formlogin.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+   <style type="text/css">
+   .col-sm-3
+   {
+       float:left;
+   }
+   .top
+   {
+       float:left;
+       text-align:right;
+   }
+   .userCss
+   {
+       float:left;
+       text-align:justify;
+   }
+   .userCss1
+   {
+       text-align:center;
+       float:left;
+       
+   }
+     .col-sm-6
+   {
+       text-align:left;
+       float:left;
+   }
+   .button1 {font-size: 10px;}
+   .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin:0px;
+    cursor: pointer;
+}
+html {
+  font-size: 14px;
+}
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 16px;
+  }
+}
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 18px;
+  }
+}
+#middle
+{
+    width:100%;
+    height:auto;
+    float:left;
+}
+.col-lg-2
+{
+    float:left;
+}
+.col-lg-8
+{
+    float:left;
+   
+}
+@media screen and (max-width:768px) 
+{
+   
+
+.image{
+
+display:none;
+
+}
+.skipt
+{
+    display:none;
+}
+
+}
+.wow:first-child
+{
+    visibility:inherit;
+}
+
+       
+
+  
+   </style>
+   <!--Function To Change Font Size and color of the text-->
+   <script type="text/javascript">
+       function change() {
+           document.body.style.backgroundColor = "#333333"
+           document.getElementById("relativeBody").style.color = "yellow";
+       }
+       function change1() {
+           document.body.style.backgroundColor = "#fff1e4"
+           document.getElementById("relativeBody").style.color = "black";
+       }
+       $('document').ready(function () {
+           $('#inc').click(function () {
+               curSize = parseInt($('#relativeBody').css('font-size')) + 1;
+               $('#relativeBody').css('font-size', curSize);
+           });
+           $('#dec').click(function () {
+               curSize = parseInt($('#relativeBody').css('font-size')) - 1;
+               $('#relativeBody').css('font-size', curSize);
+           });
+
+
+
+
+       });
+
+   </script>
+  
+        
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="relativeBody">
+<div class="container chColor">
+
+<div class="col-sm-12 col-md-12 col-lg-12">
+<div class="container">
+<div class="row ChCo">
+<div class="col-sm-3 skipt">
+    
+<a href="#skipContent" title="Skip to main content" >Skip To Main Content</a>
+</div>
+<div class="col-sm-9 top">
+<a href="https://www.nvaccess.org/download/" target="_blank" title="Screen Reader">Screen Reader</a>&nbsp;|&nbsp;
+<a href="#" title="SiteMap"><img src="../Images/36871.png" alt="SiteMap" title="SiteMap" width="15" height="15" /></a>&nbsp;|&nbsp;
+<a href="#" id="dec" title="Increment" style="text-align:right;">A-</a>&nbsp;|&nbsp;
+<a href="#" id="normal" title="Increment" style="text-align:right;" onclick="window.location.reload()">A</a>&nbsp;|&nbsp;
+<a href="#" id="inc" title="Increment"style="text-align:right;">A+</a>&nbsp;|&nbsp;
+<a href="#" id="A1" title="Increment"style="text-align:right;" onclick="change1()">A</a>&nbsp;|&nbsp;
+<a href="#" id="A2" title="Increment"style="text-align:right;" onclick="change()">A</a>&nbsp;|&nbsp;
+
+<button class="button button1" id="button2"><strong>Hindi</strong></button>    
+    </div>
+    </div>
+    </div>
+    </div>
+    <div id="middle" class="col-sm-12">   
+    <div class="row"> 
+    <div class="col-sm-8 col-md-8 col-lg-8">
+    <p class="main-content">
+    <img src="../Images/headlogo.png" alt="UPGovernment" class="image img-responsive imgr" width="100px" height="30px" /><h4 style="text-align:left; float:left;"><b>DEPARTMENT OF MEDICAL HEALTH & FAMILY WELFARE</b></h4>
+    <h4 style="text-align:left; float:left;"><b>चिकित्सा स्वास्थ्य एवं परिवार कल्याण विभाग (उत्तर प्रदेश)</b></h4>    
+    </p>
+    </div>       
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <img src="../Images/Digital_India_empower_youth.jpg" alt="Digital India" class="image img-responsive" width="180px" height="30px" style="float:right;" />
+    </div>
+    </div>  
+    </div>
+    <div class="container-fluid">
+ <nav id="skipContent" class="navbar navbar-expand-lg navbar-light" style="background-color: #ff9933;">
+  
+  
+</nav>  
+   
+
+   </div>
+   <br />
+    <form id="form1" runat="server">
+    
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+       
+    </form>
+    <div class="container">
+    <div class="row wow slideInLeft" data-wow-duration="4s">
+     <div class="col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+     <nav aria-label="breadcrumb">
+     
+  <ol class="breadcrumb">
+ 
+    <li class="breadcrumb-item" ><a href="WebSitePolicies.aspx">Website Policies</a></li>
+    <li class="breadcrumb-item" ><a href="help.aspx">Help</a></li>
+    <li class="breadcrumb-item" ><a href="contactUs.aspx">Contact Us</a></li>
+    <li class="breadcrumb-item" ><a href="feedback.aspx">Feedback</a></li>
+   
+  </ol>
+ 
+</nav>
+
+     </div>
+     </div>
+     </div>
+   
+     <div class="row">
+     <div class="col-sm-12">
+     <div class="col-sm-3">
+     <a href="http://up.nic.in/" target="_blank" title="National Informatics Center">
+     <img src="../Images/nic.gif" alt="National Informatics Center" style="float:left;" width="100%" height="50px" />
+     </a>
+     </div>
+     <div class="col-sm-6">
+      <p class="text-primary">This Website is designed & hosted by <b>National Informatics Center, Lucknow.</b> Content provided on this website is owned by <strong>Department Of Medical Health & Family Welfare.</strong></p>
+     </div>
+     <div class="col-sm-3">
+     <a href="http://digitalindia.gov.in/" target="_blank" title="Swachh Bharat Mission">
+     <img src="../Images/swachh-bharat-abhiyan-logo-vector-file-768x334.jpg" alt="Digital India Program" style="float:right;" width="80%" height="50px"  />
+     </a>
+     </div>
+     </div>
+     </div>
+    
+     
+     </div>
+     
+     
+    <script src="../JsFile/wow.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../JsFile/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        wow = new WOW(
+      {
+          animateClass: 'animated',
+          offset: 100,
+          callback: function (box) {
+              console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+          }
+      }
+    );
+        wow.init();
+        document.getElementById('moar').onclick = function () {
+            var section = document.createElement('section');
+            section.className = 'section--purple wow fadeInDown';
+            this.parentNode.insertBefore(section, this);
+        };
+    </script>
+    
+</body>
+</html>

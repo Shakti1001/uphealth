@@ -1,0 +1,523 @@
+<svg version="1.1" x="0" y="0" id="hp68radc1" diagram-revision="11" width="1120" height="665" xmlns="http://www.w3.org/2000/svg" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="hp68radc-ko66" transform="translate(525,520)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke-width:1.5;stroke:#5e5ca7;"/>
+    </g>
+    <text x="0" y="0" width="75" height="20" transform="translate(12.5,14.5)">
+      <tspan x="5" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Medicine</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko68" transform="translate(850,285)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke-width:1.5;stroke:#5e5ca7;"/>
+    </g>
+    <text x="0" y="0" width="65" height="20" transform="translate(17.5,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Student</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko72" transform="translate(440,315)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke-width:1.5;stroke:#5e5ca7;"/>
+    </g>
+    <text x="0" y="0" width="61" height="38" transform="translate(19.5,5.5)">
+      <tspan x="5" y="18" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Doctor/</tspan>
+      <tspan x="9" y="36" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Nurse</tspan>
+    </text>
+  </g>
+  <g id="Entity-hp68radc-ko74" transform="translate(615,140)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke-width:1.5;stroke:#5e5ca7;"/>
+    </g>
+    <text x="0" y="0" width="84" height="22" transform="translate(8,13.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Diagnostic</tspan>
+    </text>
+  </g>
+  <g id="Entity-hp68radc-ko75" transform="translate(695,465)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke-width:1.5;stroke:#5e5ca7;"/>
+    </g>
+    <text x="0" y="0" width="85" height="20" transform="translate(7.5,14.5)">
+      <tspan x="6" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Equipment</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko90" transform="translate(180,515)">
+    <desc>root/uml/er/entity?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <rect vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" stroke-width="1.5" width="100" height="50" style="stroke-width:1.5;stroke:#5e5ca7;"/>
+    </g>
+    <text x="0" y="0" width="53" height="20" transform="translate(23.5,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">Admin</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko87" transform="translate(5,445)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="73" height="20" transform="translate(13.5,14.5)">
+      <tspan x="6" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">admin_id</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko89" transform="translate(10,575)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="93" height="20" transform="translate(3.5,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">admin_pass</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko85" transform="translate(10,510)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="92" height="20" transform="translate(4,14.5)">
+      <tspan x="5" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">admin_user</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko86" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 160 545 L 235 615 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="hp68radc-ko91" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 165 610 L 235 615 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="hp68radc-ko88" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 165 675 L 235 615 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Key Attribute-hp68radc-ko107" transform="translate(270,210)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="49" height="22" transform="translate(25.5,13.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">dn_id</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko108" transform="translate(230,275)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="74" height="20" transform="translate(13,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">dn_name</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko110" transform="translate(235,340)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="68" height="20" transform="translate(16,14.5)">
+      <tspan x="5" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">dn_user</tspan>
+    </text>
+  </g>
+  <g id="hp68radc-ko112" transform="translate(250,405)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="69" height="20" transform="translate(15.5,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">dn_pass</tspan>
+    </text>
+  </g>
+  <g id="Connector-hp7no7pt-ko14" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 630 595 L 545 440 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g id="fromIcon" transform="translate(630,595) rotate(151.26020470831196)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="-5" y1="18" x2="5" y2="18" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="round" stroke-miterlimit="10" x1="0" y1="13" x2="-5" y2="0" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="round" stroke-miterlimit="10" x1="0" y1="13" x2="5" y2="0" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="24" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko15" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 545 440 L 630 595 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g id="fromIcon" transform="translate(545,440) rotate(-28.739795291688043)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="Key Attribute-hp7no7pt-ko16" transform="translate(380,480)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="61" height="22" transform="translate(19.5,13.5)">
+      <tspan x="5" y="17" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">med_id</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko17" transform="translate(365,540)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="86" height="20" transform="translate(7,14.5)">
+      <tspan x="5" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">med_name</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko19" transform="translate(385,610)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="96" height="36" transform="translate(2,6.5)">
+      <tspan x="5" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">med_catego</tspan>
+      <tspan x="41" y="32" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">ry</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko24" transform="translate(895,475)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="88" height="36" transform="translate(6,6.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">equip_cate</tspan>
+      <tspan x="28" y="31" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">gory</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko26" transform="translate(875,550)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="96" height="20" transform="translate(2,14.5)">
+      <tspan x="5" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">equip_name</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko28" transform="translate(825,605)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="71" height="20" transform="translate(14.5,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">equip_id</tspan>
+    </text>
+  </g>
+  <g id="Connector-hp7no7pt-ko30" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 750 565 L 590 440 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g id="fromIcon" transform="translate(750,565) rotate(127.99873244250466)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="-5" y1="18" x2="5" y2="18" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="round" stroke-miterlimit="10" x1="0" y1="13" x2="-5" y2="0" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="round" stroke-miterlimit="10" x1="0" y1="13" x2="5" y2="0" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="24" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko31" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 590 440 L 750 565 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g id="fromIcon" transform="translate(590,440) rotate(-52.00126755749534)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko36" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 595 415 L 905 385 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g id="fromIcon" transform="translate(595,415) rotate(-95.52754015165618)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko37" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 905 385 L 595 415 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g id="fromIcon" transform="translate(905,385) rotate(84.47245984834383)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="-5" y1="18" x2="5" y2="18" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="round" stroke-miterlimit="10" x1="0" y1="13" x2="-5" y2="0" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="round" stroke-miterlimit="10" x1="0" y1="13" x2="5" y2="0" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="24" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="Key Attribute-hp7no7pt-ko38" transform="translate(735,215)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="62" height="20" transform="translate(19,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">stud_id</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko39" transform="translate(830,180)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="88" height="20" transform="translate(6,14.5)">
+      <tspan x="5" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">stud_id_no</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko41" transform="translate(945,195)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="87" height="20" transform="translate(6.5,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">stud_name</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko43" transform="translate(860,370)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="96" height="20" transform="translate(2,14.5)">
+      <tspan x="2" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">stud_contact</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko45" transform="translate(960,350)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="94" height="20" transform="translate(3,14.5)">
+      <tspan x="2" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">stud_gender</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko47" transform="translate(1010,240)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="89" height="36" transform="translate(5.5,6.5)">
+      <tspan x="5" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">stud_cours</tspan>
+      <tspan x="40" y="32" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">e</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko49" transform="translate(1015,295)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="75" height="20" transform="translate(12.5,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">stud_age</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hp7no7pt-ko53" transform="translate(445,70)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="61" height="20" transform="translate(19.5,14.5)">
+      <tspan x="6" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">diag_id</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko54" transform="translate(550,30)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="87" height="20" transform="translate(6.5,14.5)">
+      <tspan x="6" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">stud_name</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hp7no7pt-ko56" transform="translate(660,5)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="88" height="20" transform="translate(6,14.5)">
+      <tspan x="5" y="15" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">stud_id_no</tspan>
+    </text>
+  </g>
+  <g id="Key Attribute-hp7no7pt-ko57" transform="translate(765,20)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="83" height="20" transform="translate(8.5,14.5)">
+      <tspan x="5" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">diagnostic</tspan>
+    </text>
+  </g>
+  <g id="hp7no7pt-ko58" transform="translate(820,80)">
+    <desc>root/uml/er/keyAttribute?version=1&amp;author=Cinergix</desc>
+    <g id="image">
+      <ellipse vector-effect="non-scaling-stroke" fill="#FFFFFF" stroke="#5e5ca7" cx="50" cy="25" rx="50" ry="25" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="0" width="79" height="20" transform="translate(10.5,14.5)">
+      <tspan x="6" y="16" style="font-family:Arial;font-size:14px;fill:#000000;font-weight:bold;">diag_date</tspan>
+    </text>
+  </g>
+  <g id="Connector-hp7no7pt-ko60" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 720 265 L 595 390 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g id="fromIcon" transform="translate(720,265) rotate(45)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="-5" y1="18" x2="5" y2="18" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="round" stroke-miterlimit="10" x1="0" y1="13" x2="-5" y2="0" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="round" stroke-miterlimit="10" x1="0" y1="13" x2="5" y2="0" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="24" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko61" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 595 390 L 720 265 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g id="fromIcon" transform="translate(595,390) rotate(-135)">
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="5" y1="8" x2="-5" y2="8" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+      <line stroke="#5e5ca7" stroke-linecap="square" stroke-miterlimit="10" x1="0" y1="0" x2="0" y2="16" style="stroke-width:1.5;stroke:#5e5ca7;" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko62" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 425 310 L 495 415 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko63" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 385 375 L 495 415 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko64" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 390 440 L 495 415 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko66" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 405 505 L 495 415 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko67" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 720 215 L 600 170 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko68" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 720 215 L 655 155 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko69" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 720 215 L 765 130 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko70" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 720 215 L 870 145 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko71" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 720 215 L 875 180 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko72" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 930 680 L 850 565 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko73" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 980 625 L 850 565 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko74" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 950 575 L 850 565 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko75" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 535 580 L 580 620 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko76" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 520 640 L 580 620 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko77" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 540 710 L 580 620 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko78" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 935 305 L 955 360 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko79" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 890 315 L 955 360 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko80" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 1050 320 L 955 360 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko81" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 1065 340 L 955 360 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko82" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 1070 395 L 1005 385 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko83" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 1065 425 L 1005 385 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="Connector-hp7no7pt-ko84" transform="translate(-55,-75)">
+    <g id="graphics">
+      
+      <path d="M 965 445 L 955 410 " fill="none" stroke="#5e5ca7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

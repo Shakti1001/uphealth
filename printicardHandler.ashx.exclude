@@ -1,0 +1,44 @@
+﻿<%@ WebHandler Language="C#" Class="printicardHandler" %>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.SqlClient;
+
+public class printicardHandler : IHttpHandler {
+        Class1 c = new Class1();
+    public void ProcessRequest (HttpContext context)
+        {
+            try
+            {
+                context.Response.ContentType = "text/plain";
+                //context.Response.Write("Hello World");
+                string imageid = context.Request.QueryString["Id"];
+                // string sno = context.Request.QueryString["sno"];
+                //  SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=healthpis;Integrated Security=True");
+                // connection.Open();
+                c.con.Open();
+                c.cmd.CommandText = "select applicant_image from printicard121216 where printicard121216.reg_id=" + imageid + "";
+                //SqlCommand command = new SqlCommand("select applicant_image from Employee where applicant_image=" + imageid, connection);
+                SqlDataReader dr = c.cmd.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    context.Response.BinaryWrite((Byte[])dr[0]);
+                    c.con.Close();
+                    context.Response.End();
+                }
+            }
+            catch { 
+                    
+            }
+    }
+ 
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+
+}
